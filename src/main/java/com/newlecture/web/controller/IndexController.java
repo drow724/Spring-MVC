@@ -13,7 +13,7 @@ public class IndexController implements Controller{
 		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("data", "Hello Spring MVC!");
-		mv.setViewName("index.jsp");
+		mv.setViewName("/WEB-INF/view/index.jsp");
 		return mv;
 	}
 	
