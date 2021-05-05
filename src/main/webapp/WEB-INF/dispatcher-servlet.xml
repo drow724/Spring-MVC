@@ -4,8 +4,10 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
         
-    <bean id="/index" class="com.newlecture.web.controller.IndexController">  
+    <bean id="/index" class="com.newlecture.web.controller.IndexController" />  
         <!-- collaborators and configuration for this bean go here -->
-    </bean>
-
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/view/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
 </beans>
