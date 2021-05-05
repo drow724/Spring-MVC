@@ -11,6 +11,12 @@
 	    <artifactId>tomcat-api</artifactId>
 	    <version>9.0.43</version>
 	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>5.2.9.RELEASE</version>
+	</dependency>
   </dependencies>
   <properties>
   	<maven.compiler.source>1.8</maven.compiler.source>
