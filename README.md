@@ -5,3 +5,10 @@ Spring MVC란
 =============
 
 ![aaaaaaaaaaaaaa](https://user-images.githubusercontent.com/76800974/113819151-e01eff00-97b3-11eb-90f7-6aa1b3bbea7f.png)
+
+페이지 공통분모 집중화
+=============
+
+![aaaaaaaaaaaaaaaaa](https://user-images.githubusercontent.com/76800974/117249833-36e42b00-ae7d-11eb-97f2-f4a1b6e3b96b.png)
+
+![bbbbbbbbbbbbbbbbbbbbbbbb](https://user-images.githubusercontent.com/76800974/117249868-406d9300-ae7d-11eb-971c-be58c7f7d2d4.png)
