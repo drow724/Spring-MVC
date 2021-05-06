@@ -18,69 +18,7 @@
 <body>
     <!-- header 부분 -->
 
-    <header id="header">
-        
-        <div class="content-container">
-            <!-- ---------------------------<header>--------------------------------------- -->
-
-            <h1 id="logo">
-                <a href="/index.html">
-                    <img src="/images/logo.png" alt="뉴렉처 온라인" />
-
-                </a>
-            </h1>
-
-            <section>
-                <h1 class="hidden">헤더</h1>
-
-                <nav id="main-menu">
-                    <h1>메인메뉴</h1>
-                    <ul>
-                        <li><a href="/guide">학습가이드</a></li>
-
-                        <li><a href="/course">강좌선택</a></li>
-                        <li><a href="/answeris/index">AnswerIs</a></li>
-                    </ul>
-                </nav>
-
-                <div class="sub-menu">
-
-                    <section id="search-form">
-                        <h1>강좌검색 폼</h1>
-                        <form action="/course">
-                            <fieldset>
-                                <legend>과정검색필드</legend>
-                                <label>과정검색</label>
-                                <input type="text" name="q" value="" />
-                                <input type="submit" value="검색" />
-                            </fieldset>
-                        </form>
-                    </section>
-
-                    <nav id="acount-menu">
-                        <h1 class="hidden">회원메뉴</h1>
-                        <ul>
-                            <li><a href="/index.html">HOME</a></li>
-                            <li><a href="/member/login.html">로그인</a></li>
-                            <li><a href="/member/agree.html">회원가입</a></li>
-                        </ul>
-                    </nav>
-
-                    <nav id="member-menu" class="linear-layout">
-                        <h1 class="hidden">고객메뉴</h1>
-                        <ul class="linear-layout">
-                            <li><a href="/member/home"><img src="/images/txt-mypage.png" alt="마이페이지" /></a></li>
-                            <li><a href="/notice/list"><img src="/images/txt-customer.png" alt="고객센터" /></a></li>
-                        </ul>
-                    </nav>
-
-                </div>
-            </section>
-
-        </div>
-        
-    </header>
-
+    
 
     <!-- --------------------------- <body> --------------------------------------- -->
 
@@ -381,36 +319,6 @@
 
 
 
-    <footer id="footer">
-        <div class="content-container">
-            <h2 id="footer-logo"><img src="images/logo-footer.png" alt="회사정보"></h2>
-
-            <div id="company-info">
-                <dl>
-                    <dt>주소:</dt>
-                    <dd>서울특별시 </dd>
-                    <dt>관리자메일:</dt>
-                    <dd>admin@newlecture.com</dd>
-                </dl>
-                <dl>
-                    <dt>사업자 등록번호:</dt>
-                    <dd>111-11-11111</dd>
-                    <dt>통신 판매업:</dt>
-                    <dd>신고제 1111 호</dd>
-                </dl>
-                <dl>
-                    <dt>상호:</dt>
-                    <dd>뉴렉처</dd>
-                    <dt>대표:</dt>
-                    <dd>홍길동</dd>
-                    <dt>전화번호:</dt>
-                    <dd>111-1111-1111</dd>
-                </dl>
-                <div id="copyright" class="margin-top">Copyright ⓒ newlecture.com 2012-2014 All Right Reserved.
-                    Contact admin@newlecture.com for more information</div>
-            </div>
-        </div>
-    </footer>
 </body>
 
 </html>
