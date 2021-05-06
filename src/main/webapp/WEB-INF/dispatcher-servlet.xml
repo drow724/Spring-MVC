@@ -10,10 +10,23 @@
     <bean id="/index" class="com.newlecture.web.controller.IndexController" />  
     <bean id="/notice/list" class="com.newlecture.web.controller.notice.ListController" />  
     <bean id="/notice/detail" class="com.newlecture.web.controller.notice.DetailController" />  
-        <!-- collaborators and configuration for this bean go here -->
+    
+    <bean
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles3.TilesView" />
+		<property name="order" value="1" />
+	</bean>
+
+	<bean
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions" value="/WEB-INF/tiles.xml" />
+	</bean>
+	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/"></property>
 		<property name="suffix" value=".jsp"></property>
+		<property name="order" value="2" />
 	</bean>
 	
 	<mvc:resources location="/static/" mapping="/**"></mvc:resources>
