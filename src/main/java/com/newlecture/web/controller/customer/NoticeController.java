@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.newlecture.web.entity.NoticeView;
 import com.newlecture.web.service.NoticeService;
@@ -20,12 +21,11 @@ public class NoticeController {
 	private NoticeService noticeService;
 	
 	@RequestMapping("list")
-	public String list(String p) {
-		System.out.println(p);
+	public String list(@RequestParam(name = "p", defaultValue = "1") int page) {
+		System.out.println(page);
 		//String p = request.getParameter("p");
-		int page = Integer.parseInt(p);
 		
-	List<NoticeView> list = noticeService.getNoticeList("title", "", page);
+		List<NoticeView> list = noticeService.getNoticeList("title", "", page);
 		
 		return "notice.list";
 	}
