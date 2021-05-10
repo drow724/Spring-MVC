@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
-import com.newlecture.web.entity.Notice;
 import com.newlecture.web.entity.NoticeView;
 import com.newlecture.web.service.NoticeService;
 
