@@ -26,6 +26,6 @@ xml과 annotation
 지금까지 다루었던 내용과 이번에 다루게 될 사용자 입력 5가지
 =============
 
-![aaaaaaaaaaaaaa](https://user-images.githubusercontent.com/76800974/117667768-354d9680-b1e0-11eb-9b99-e66d85250600.png)
-![bbbbbbbbbbbbbbbbbbb](https://user-images.githubusercontent.com/76800974/117667775-367ec380-b1e0-11eb-8402-a9b1dc1a005e.png)
-![cccccccccccccccccccc](https://user-images.githubusercontent.com/76800974/117667777-37175a00-b1e0-11eb-9d58-32a1e9dcf267.png)
+![aaaaaaaaaaaaaa](https://user-images.githubusercontent.com/76800974/117667970-72198d80-b1e0-11eb-8392-cd91a0391f0b.png)
+![bbbbbbbbbbbbbbbbbbb](https://user-images.githubusercontent.com/76800974/117667975-734aba80-b1e0-11eb-8632-bc397c6fb4e6.png)
+![cccccccccccccccccccc](https://user-images.githubusercontent.com/76800974/117667978-734aba80-b1e0-11eb-91d4-75100930644f.png)
