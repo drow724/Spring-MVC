@@ -15,7 +15,7 @@ public int removeNoticeAll(int[] ids);
 	List<Notice> getNoticeNewestList();
 	public List<NoticeView> getNoticeList();
 	public List<NoticeView> getNoticeList(int page);
-	public List<NoticeView> getNoticeList(String field/*TUTKE, WRITER_ID*/, String query/*A*/, int page);
+	public List<Notice> getNoticeList(String field/*TUTKE, WRITER_ID*/, String query/*A*/, int page);
 	public int getNoticeCount();
 	public int getNoticeCount(String field, String query);
 	public Notice getNotice(int id);

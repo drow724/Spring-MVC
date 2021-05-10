@@ -76,9 +76,9 @@ public class JDBCNoticeService implements NoticeService {
 		
 		return getNoticeList("title", "", page);
 	}
-	public List<NoticeView> getNoticeList(String field/*TUTKE, WRITER_ID*/, String query/*A*/, int page){
+	public List<Notice> getNoticeList(String field/*TUTKE, WRITER_ID*/, String query/*A*/, int page){
 		
-		List<NoticeView> list = new ArrayList<>();
+		List<Notice> list = new ArrayList<>();
 			
 		String sql = "SELECT * FROM (" +
 				"	SELECT ROWNUM NUM, N.* " +
