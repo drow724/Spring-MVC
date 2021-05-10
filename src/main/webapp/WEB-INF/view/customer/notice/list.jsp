@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <main class="main">
 			<h2 class="main title">공지사항</h2>
 			
@@ -42,58 +43,18 @@
 						</tr>
 					</thead>
 					<tbody>
-							
-					<tr>
-						<td>8</td>
-						<td class="title indent text-align-left"><a href="detail">스프링 8강까지의 예제 코드</a></td>
-						<td>newlec</td>
-						<td>
-							2019-08-18		
-						</td>
-						<td>146</td>
-					</tr>
-							
-					<tr>
-						<td>7</td>
-						<td class="title indent text-align-left"><a href="detail">스프링 DI 예제 코드</a></td>
-						<td>newlec</td>
-						<td>
-							2019-08-15		
-						</td>
-						<td>131</td>
-					</tr>
-							
-					<tr>
-						<td>6</td>
-						<td class="title indent text-align-left"><a href="detail">뉴렉쌤 9월 초 국기과정 모집 안내</a></td>
-						<td>newlec</td>
-						<td>
-							2019-06-11		
-						</td>
-						<td>517</td>
-					</tr>
-							
-					<tr>
-						<td>5</td>
-						<td class="title indent text-align-left"><a href="detail">뉴렉처 강의 수강 방식 안내</a></td>
-						<td>newlec</td>
-						<td>
-							2019-05-24		
-						</td>
-						<td>448</td>
-					</tr>
-							
-					<tr>
-						<td>4</td>
-						<td class="title indent text-align-left"><a href="detail">자바 구조적인 프로그래밍 강의 예제 파일</a></td>
-						<td>newlec</td>
-						<td>
-							2019-04-24		
-						</td>
-						<td>520</td>
-					</tr>
 					
-					
+					<c:forEach var="n" items="${list}">
+					<tr>
+						<td>${n.id}</td>
+						<td class="title indent text-align-left"><a href="detail">${n.title}</a></td>
+						<td>${n.writerId}</td>
+						<td>
+							%{n.regDate}	
+						</td>
+						<td>${n.hit}</td>
+					</tr>
+					</c:forEach>
 					</tbody>
 				</table>
 			</div>
