@@ -12,12 +12,6 @@
         
     <!-- <context:annotation-config /> -->
     <context:component-scan base-package="com.newlecture.web.controller"/>
-    
-	<!-- <bean id="/index" class="com.newlecture.web.controller.IndexController" /> -->  
-    <bean id="/notice/list" class="com.newlecture.web.controller.notice.ListController" >
-    	<!-- <property name="noticeService" ref="noticeService" /> -->
-    </bean>  
-    <bean id="/notice/detail" class="com.newlecture.web.controller.notice.DetailController" />  
 
     <bean
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
