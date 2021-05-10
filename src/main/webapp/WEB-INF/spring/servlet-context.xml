@@ -10,9 +10,10 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
         
-    <context:annotation-config />
-        
-	<bean id="/index" class="com.newlecture.web.controller.IndexController" />  
+    <!-- <context:annotation-config /> -->
+    <context:component-scan base-package="com.newlecture.web.controller"/>
+    
+	<!-- <bean id="/index" class="com.newlecture.web.controller.IndexController" /> -->  
     <bean id="/notice/list" class="com.newlecture.web.controller.notice.ListController" >
     	<!-- <property name="noticeService" ref="noticeService" /> -->
     </bean>  
@@ -37,5 +38,5 @@
 	</bean>
 	
 	<mvc:resources location="/static/" mapping="/**"></mvc:resources>
-	
+	<mvc:annotation-driven />
 </beans>
