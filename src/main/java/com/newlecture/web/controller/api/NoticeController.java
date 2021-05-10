@@ -22,7 +22,7 @@ public class NoticeController {
 	@RequestMapping("list")
 	public Notice list() {
 		
-		List<Notice> list = noticeService.getNoticeList("title", "", 1);
+		List<NoticeView> list = noticeService.getNoticeList("title", "", 1);
 		
 		return list.get(0);
 	}

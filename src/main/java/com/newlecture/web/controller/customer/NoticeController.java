@@ -2,6 +2,9 @@ package com.newlecture.web.controller.customer;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,9 +20,12 @@ public class NoticeController {
 	private NoticeService noticeService;
 	
 	@RequestMapping("list")
-	public String list() {
+	public String list(String p) {
+		System.out.println(p);
+		//String p = request.getParameter("p");
+		int page = Integer.parseInt(p);
 		
-		List<NoticeView> list = noticeService.getNoticeList("title", "", 1);
+	List<NoticeView> list = noticeService.getNoticeList("title", "", page);
 		
 		return "notice.list";
 	}
