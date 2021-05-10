@@ -17,3 +17,8 @@ Tiles
 =============
 
 ![aaaaaaaaaaaaaa](https://user-images.githubusercontent.com/76800974/117262037-cb558a00-ae8b-11eb-8773-395549a1a866.png)
+
+xml과 annotation
+=============
+
+![bbbbbbbbbbbb](https://user-images.githubusercontent.com/76800974/117651233-b00cb680-b1cc-11eb-9226-686a2cfc357c.png)
