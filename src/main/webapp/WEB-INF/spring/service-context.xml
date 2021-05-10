@@ -10,7 +10,9 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<context:annotation-config />
+	<!-- 컴포넌트 스캔 시 어노테이션 스캔도 자동 -->
+	<!-- <context:annotation-config /> -->
+	<context:component-scan base-package="com.newlecture.web.service" />
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
@@ -19,8 +21,8 @@
 		<property name="password" value="119562"></property>
 	</bean>
 	
-	<bean id="noticeService" class="com.newlecture.web.service.jdbc.JDBCNoticeService">
-		<!-- <property name="dataSource" ref="dataSource"/> -->
-	</bean>  
+	<!-- <bean id="noticeService" class="com.newlecture.web.service.jdbc.JDBCNoticeService">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>   -->
 	
 </beans>
