@@ -38,7 +38,7 @@ public class Notice {
 	}
 
 	public void setid(int id) {
-		id = id;
+		this.id = id;
 	}
 
 	public String getTitle() {

@@ -1,7 +1,6 @@
 package com.newlecture.web.service.jdbc;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,11 +9,19 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.sql.DataSource;
+
 import com.newlecture.web.entity.Notice;
 import com.newlecture.web.entity.NoticeView;
 import com.newlecture.web.service.NoticeService;
 
 public class JDBCNoticeService implements NoticeService {
+	
+	private DataSource dataSource;
+	
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
 	
 	public int removeNoticeAll(int[] ids){
 		
@@ -27,11 +34,10 @@ public class JDBCNoticeService implements NoticeService {
 		int result = 0;
 		
 		String sql = "INSERT INTO NOTICE(TITLE, CONTENT, WRITER_ID, PUB) VALUES(?,?,?,?)";
-		String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
-		
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection(url, "NEWLEC", "119562");
+			//Class.forName("oracle.jdbc.driver.OracleDriver");
+			//Connection con = DriverManager.getConnection(url, "NEWLEC", "119562");
+			Connection con = dataSource.getConnection();
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setString(1,  notice.getTitle());
 			st.setString(2,  notice.getContent());
@@ -44,7 +50,7 @@ public class JDBCNoticeService implements NoticeService {
 			st.close();
 			con.close();
 					
-		}	catch (ClassNotFoundException | SQLException e) {
+		}	catch (SQLException e) {
 							// TODO Auto-generated catch block
 						e.printStackTrace();
 		}
@@ -81,11 +87,10 @@ public class JDBCNoticeService implements NoticeService {
 		// 1, 11 , 21, 31 - > an = 1+(page-1)*10
 		// 10, 20, 30, 40 -> page*10
 	
-	   	String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
-		
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection(url, "NEWLEC", "119562");
+	   	try {
+			//Class.forName("oracle.jdbc.driver.OracleDriver");
+			//Connection con = DriverManager.getConnection(url, "NEWLEC", "119562");
+			Connection con = dataSource.getConnection();
 			PreparedStatement st = con.prepareStatement(sql);
 	
 			st.setString(1, "%"+query+"%");
@@ -123,7 +128,7 @@ public class JDBCNoticeService implements NoticeService {
 					st.close();
 					con.close();
 			
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -142,12 +147,11 @@ public class JDBCNoticeService implements NoticeService {
 				"SELECT ROWNUM NUM, N.*" +
 				"	FROM (SELECT * FROM NOTICE WHERE "+field+" LIKE ? ORDER BY REGDATE DESC)N" +
 				") ";
-
-	   	String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
 	   	
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection(url, "NEWLEC", "119562");
+			//Class.forName("oracle.jdbc.driver.OracleDriver");
+			//Connection con = DriverManager.getConnection(url, "NEWLEC", "119562");
+			Connection con = dataSource.getConnection();
 			PreparedStatement st = con.prepareStatement(sql);
 	
 			st.setString(1, "%"+query+"%");
@@ -161,7 +165,7 @@ public class JDBCNoticeService implements NoticeService {
 					st.close();
 					con.close();
 			
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -172,12 +176,12 @@ public class JDBCNoticeService implements NoticeService {
 		Notice notice = null;
 		
 		String sql = "SELECT * FROM NOTICE WHERE ID=?";
-		
-		String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
+
 		
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection(url, "NEWLEC", "119562");
+			//Class.forName("oracle.jdbc.driver.OracleDriver");
+			//Connection con = DriverManager.getConnection(url, "NEWLEC", "119562");
+			Connection con = dataSource.getConnection();
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setInt(1, id);
 			
@@ -209,7 +213,7 @@ public class JDBCNoticeService implements NoticeService {
 					st.close();
 					con.close();
 			
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -225,11 +229,11 @@ public class JDBCNoticeService implements NoticeService {
 			+ "    WHERE REGDATE > (SELECT REGDATE FROM NOTICE WHERE ID=?) "
 			+ "	AND ROWNUM = 1 "
 			+ ") ";
-	String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
 	
 	try {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con = DriverManager.getConnection(url, "NEWLEC", "119562");
+		//Class.forName("oracle.jdbc.driver.OracleDriver");
+		//Connection con = DriverManager.getConnection(url, "NEWLEC", "119562");
+		Connection con = dataSource.getConnection();
 		PreparedStatement st = con.prepareStatement(sql);
 		st.setInt(1, id);
 		
@@ -261,7 +265,7 @@ public class JDBCNoticeService implements NoticeService {
 				st.close();
 				con.close();
 		
-	} catch (ClassNotFoundException | SQLException e) {
+	} catch (SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
@@ -273,11 +277,11 @@ public class JDBCNoticeService implements NoticeService {
 		String sql = "	SELECT ID FROM (SELECT * FROM NOTICE ORDER BY REGDATE DESC) "
 				+ "	WHERE REGDATE < (SELECT REGDATE FROM NOTICE WHERE ID=?) "
 				+ "	AND ROWNUM = 1 ";
-String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
 		
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection(url, "NEWLEC", "119562");
+			//Class.forName("oracle.jdbc.driver.OracleDriver");
+			//Connection con = DriverManager.getConnection(url, "NEWLEC", "119562");
+			Connection con = dataSource.getConnection();
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setInt(1, id);
 			
@@ -309,7 +313,7 @@ String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
 					st.close();
 					con.close();
 			
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -327,11 +331,11 @@ String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
 			params += ",";
 		}
 		String sql = "DELETE NOTICE WHERE ID IN ("+params+")";
-		String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
 		
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection(url, "NEWLEC", "119562");
+			//Class.forName("oracle.jdbc.driver.OracleDriver");
+			//Connection con = DriverManager.getConnection(url, "NEWLEC", "119562");
+			Connection con = dataSource.getConnection();
 			Statement st = con.createStatement();
 
 			result = st.executeUpdate(sql);
@@ -340,7 +344,7 @@ String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
 			st.close();
 			con.close();
 					
-		}	catch (ClassNotFoundException | SQLException e) {
+		}	catch (SQLException e) {
 							// TODO Auto-generated catch block
 						e.printStackTrace();
 		}
