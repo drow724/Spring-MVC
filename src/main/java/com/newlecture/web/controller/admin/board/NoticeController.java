@@ -26,26 +26,27 @@ public class NoticeController {
 	
 	@RequestMapping("reg")
 	@ResponseBody
-	public String reg(String title, String content, MultipartFile file, String category, String[] foods, String food, HttpServletRequest request) throws IllegalStateException, IOException {
+	public String reg(String title, String content, MultipartFile[] files, String category, String[] foods, String food, HttpServletRequest request) throws IllegalStateException, IOException {
 		
-		long size = file.getSize();
-		String fileName = file.getOriginalFilename();
-		System.out.printf("fileName:%s, fileSize:%d\n", fileName, size);
-		
-		//ServletContext ctx = request.getServletContext();
-		String webPath = "/static/upload";
-		String realPath = ctx.getRealPath(webPath);
-		System.out.printf("realPath : %s\n", realPath);
-		// 업로드 하기 위한 경로가 없을 경우
-		File savePath = new File(realPath);
-		if(!savePath.exists())
-			savePath.mkdirs();
-		
-		realPath += File.separator + fileName;
-		File savaFile = new File(realPath);
-		
-		file.transferTo(savaFile);
-		
+		for(MultipartFile file : files) {
+			long size = file.getSize();
+			String fileName = file.getOriginalFilename();
+			System.out.printf("fileName:%s, fileSize:%d\n", fileName, size);
+			
+			//ServletContext ctx = request.getServletContext();
+			String webPath = "/static/upload";
+			String realPath = ctx.getRealPath(webPath);
+			System.out.printf("realPath : %s\n", realPath);
+			// 업로드 하기 위한 경로가 없을 경우
+			File savePath = new File(realPath);
+			if(!savePath.exists())
+				savePath.mkdirs();
+			
+			realPath += File.separator + fileName;
+			File savaFile = new File(realPath);
+			
+			file.transferTo(savaFile);
+		}
 		for(String f : foods)
 			System.out.println(f);
 		System.out.println(food);
