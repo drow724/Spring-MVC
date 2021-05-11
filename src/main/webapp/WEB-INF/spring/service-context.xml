@@ -9,20 +9,19 @@
         https://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
-	
-	<!-- 컴포넌트 스캔 시 어노테이션 스캔도 자동 -->
+
 	<!-- <context:annotation-config /> -->
 	<context:component-scan base-package="com.newlecture.web.service" />
-	
+
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@localhost:1521/xepdb1" />
-		<property name="username" value="NEWLEC"></property>
-		<property name="password" value="119562"></property>
+		<property name="username" value="NEWLEC"/>
+		<property name="password" value="11111"/>
 	</bean>
 	
 	<!-- <bean id="noticeService" class="com.newlecture.web.service.jdbc.JDBCNoticeService">
-		<property name="dataSource" ref="dataSource"/>
-	</bean>   -->
-	
+		<property name="dataSource" ref="dataSource" />
+	</bean> -->
+
 </beans>

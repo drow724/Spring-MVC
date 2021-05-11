@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-			<aside class="aside">
+<aside class="aside">
 				<h1>고객센터</h1>
 
 				<nav class="menu text-menu first margin-top">
@@ -15,13 +15,13 @@
 				</nav>
 
 
-				<nav class="menu">
-					<h1>협력업체</h1>
-					<ul>
-						<li><a target="_blank" href="http://www.notepubs.com"><img src="/images/notepubs.png" alt="노트펍스" /></a></li>
-						<li><a target="_blank" href="http://www.namoolab.com"><img src="/images/namoolab.png" alt="나무랩연구소" /></a></li>
-									
-					</ul>
-				</nav>
+	<nav class="menu">
+		<h1>협력업체</h1>
+		<ul>
+			<li><a target="_blank" href="http://www.notepubs.com"><img src="/images/notepubs.png" alt="노트펍스" /></a></li>
+			<li><a target="_blank" href="http://www.namoolab.com"><img src="/images/namoolab.png" alt="나무랩연구소" /></a></li>
+						
+		</ul>
+	</nav>
 					
 			</aside>

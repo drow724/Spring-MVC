@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+	 <!-- content 부분 -->
+
+
 
     <div id="visual" class="">
         <div class="content-container">
@@ -283,3 +286,7 @@
             </ul>
         </div>
     </main>
+    <script>
+
+    </script>
+    

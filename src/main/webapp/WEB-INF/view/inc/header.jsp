@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<header id="header">
+	<header id="header">
         
         <div class="content-container">
             <!-- ---------------------------<header>--------------------------------------- -->
@@ -52,7 +52,7 @@
                         <h1 class="hidden">고객메뉴</h1>
                         <ul class="linear-layout">
                             <li><a href="/member/home"><img src="/images/txt-mypage.png" alt="마이페이지" /></a></li>
-                            <li><a href="customer/notice/list"><img src="/images/txt-customer.png" alt="고객센터" /></a></li>
+                            <li><a href="/customer/notice/list"><img src="/images/txt-customer.png" alt="고객센터" /></a></li>
                         </ul>
                     </nav>
 
